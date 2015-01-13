@@ -1,2 +1,23 @@
-draw text 100,100,WOW,1
-save image test
+draw text 160,10,9:41 AM,1
+draw text 75,70,Tony: Hey what's up?,1
+draw text 75,120,New Snapchat from Sehaam,1
+draw text 75,170,Meeting on Monday,1
+
+# SIGNAL INDICATOR
+# draw line 5,20,5,20,1
+# draw line 7,20,7,18,1
+# draw line 9,20,9,16,1
+# draw line 11,20,11,14,1
+# draw line 13,20,13,12,1
+
+# NEW SIGNAL INDICATOR
+fill circle 10,17,3,1
+fill circle 18,17,3,1
+fill circle 26,17,3,1
+draw circle 34,17,3,1
+draw circle 42,17,3,1
+
+# PHONE BATTERY LEVEL
+draw rect 368,12,20,10,1
+fill rect 370,14,12,6,1
+fill rect 388,15,2,4,1

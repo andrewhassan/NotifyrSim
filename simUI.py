@@ -21,8 +21,12 @@ WHITE = (255, 255, 255)
 pygame.init()
 font = pygame.font.SysFont("monospace", 16)
 screen = pygame.display.set_mode([400,240])
-screen.fill(WHITE)
-pygame.display.flip()
+
+def clearScreen():
+  screen.fill(WHITE)
+  pygame.display.flip()
+
+clearScreen()
 
 def getNextArg(string):
   # Strip leading whitespace
@@ -70,7 +74,7 @@ def process(command, commandType, argList):
     elif( commandType == 'rect' and len(argList) == 5):
       pygame.draw.rect( screen,BLACK if int(argList[4])> 0 else WHITE,(int(argList[0]),int(argList[1]), int(argList[2]), int(argList[3]) ),1 )
     elif( commandType == 'circle' and len(argList) == 4):
-      pygame.draw.circle(screen,BLACK if int(argList[3])> 0 else WHITE, (int(argList[0]),int(argList[1])), int(argList[2]), width=1)
+      pygame.draw.circle(screen,BLACK if int(argList[3])> 0 else WHITE, (int(argList[0]),int(argList[1])), int(argList[2]), 1)
     elif( commandType == 'bitmap' and len(argList) == 6):
       image = pygame.image.load(argList[2])
       image = pygame.transform.scale(image, (int(argList[3]), int(argList[4])))
@@ -97,6 +101,8 @@ def process(command, commandType, argList):
   elif( command == 'save'):
     if( commandType == 'image' and len(argList) == 1):
       pygame.image.save( screen, argList[0]+".png" )
+  elif(command == 'clear'):
+    clearScreen()
   elif( command == 'exit'):
     exit(0)
 
