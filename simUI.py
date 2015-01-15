@@ -19,7 +19,8 @@ WHITE = (255, 255, 255)
 
 # Initialize pygame, fonts, etc.
 pygame.init()
-font = pygame.font.SysFont("monospace", 16)
+# font = pygame.font.SysFont("Lato Light", 16)
+font = pygame.font.Font("Lato-Light.ttf", 16)
 screen = pygame.display.set_mode([400,240])
 
 def clearScreen():
